@@ -23,7 +23,7 @@ public class AlgorithmStepsThread implements Runnable {
 
     JButton jButtonAlgorithmSteps;
     Vector<MemoryCell> finalMainMemory;
-    MemoryGenerator memoryGenerator;
+    MemoryGenerator memoryGenerator = new MemoryGenerator();
     Vector<Process> processesQueue;
     JPanel jPanelAnimation;
     JLabel jLabelNextStep;
@@ -33,11 +33,10 @@ public class AlgorithmStepsThread implements Runnable {
     JButton jButtonOkNextStep;
     JLabel jLabelAtDialogNextStep;
     
-    public AlgorithmStepsThread(MainScreen mainScreen, JButton jButtonAlgorithmSteps, Vector<MemoryCell> finalMainMemory, MemoryGenerator memoryGenerator, Vector<Process> processesQueue, JPanel jPanelAnimation) {
+    public AlgorithmStepsThread(MainScreen mainScreen, JButton jButtonAlgorithmSteps, Vector<MemoryCell> finalMainMemory, Vector<Process> processesQueue, JPanel jPanelAnimation) {
         this.mainScreen = mainScreen ;
         this.jButtonAlgorithmSteps = jButtonAlgorithmSteps;
         this.finalMainMemory = finalMainMemory;
-        this.memoryGenerator = memoryGenerator;
         this.processesQueue = processesQueue;
         this.jPanelAnimation = jPanelAnimation;
     }
@@ -211,14 +210,11 @@ public class AlgorithmStepsThread implements Runnable {
                     }
                 }
             }
-            
-            block.setText("j");
-            block.setBackground(new java.awt.Color(255, 255, 102));
-            block.setToolTipText("Possível posição");            
-            this.jPanelAnimation.removeAll();
-            this.jPanelAnimation.repaint();
             this.mainScreen.paintMainMemory(this.finalMainMemory);
             this.jPanelAnimation.add(block);
+            block.setText("j");
+            block.setBackground(new java.awt.Color(255, 255, 102));
+            block.setToolTipText("Possível posição");
             this.jDialogNextStep.setVisible(true);
             do {
                 if (this.isJButtonOkClicked) {
@@ -675,13 +671,11 @@ public class AlgorithmStepsThread implements Runnable {
                             }
                         }
                     }
+                    this.mainScreen.paintMainMemory(this.finalMainMemory);
+                    this.jPanelAnimation.add(block1);
                     block1.setText("j");
                     block1.setBackground(new java.awt.Color(255, 255, 102));
                     block1.setToolTipText("Possível Posição");
-                    this.jPanelAnimation.removeAll();
-                    this.jPanelAnimation.repaint();
-                    this.mainScreen.paintMainMemory(this.finalMainMemory);
-                    this.jPanelAnimation.add(block1);
                     this.jDialogNextStep.setVisible(true);
                     do {
                         if (this.isJButtonOkClicked) {
@@ -1141,13 +1135,11 @@ public class AlgorithmStepsThread implements Runnable {
                                 }
                             }
                         }
+                        this.mainScreen.paintMainMemory(this.finalMainMemory);
+                        this.jPanelAnimation.add(block2);
                         block2.setText("j");
                         block2.setBackground(new java.awt.Color(255, 255, 102));
                         block2.setToolTipText("Possível Posição");
-                        this.jPanelAnimation.removeAll();
-                        this.jPanelAnimation.repaint();
-                        this.mainScreen.paintMainMemory(this.finalMainMemory);
-                        this.jPanelAnimation.add(block2);
                         this.jDialogNextStep.setVisible(true);
                         do {
                             if (this.isJButtonOkClicked) {
@@ -1598,10 +1590,7 @@ public class AlgorithmStepsThread implements Runnable {
                     }
                 }
             }
-            
             this.finalMainMemory = algorithm.toExecute_B(this.finalMainMemory, process);
-            this.jPanelAnimation.removeAll();
-            this.jPanelAnimation.repaint();
             this.mainScreen.paintMainMemory(this.finalMainMemory);
 
             if(this.processesQueue.size() > 0) {
