@@ -48,9 +48,7 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="jPanelProcessesQueue" max="32767" attributes="0"/>
-                                              <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
-                                              <Component id="jLabelNextStep" min="-2" pref="8" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="282" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="jPanelInsertion" alignment="0" max="32767" attributes="1"/>
                                           <Component id="jPanelLegend" alignment="0" max="32767" attributes="1"/>
@@ -79,13 +77,7 @@
                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                       <Component id="jPanelInsertion" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPanelProcessesQueue" max="32767" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabelNextStep" min="-2" pref="11" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <Component id="jPanelProcessesQueue" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jPanelAlgorithm" max="32767" attributes="0"/>
               </Group>
@@ -459,8 +451,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRestartActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabelNextStep">
     </Component>
   </SubComponents>
 </Form>
