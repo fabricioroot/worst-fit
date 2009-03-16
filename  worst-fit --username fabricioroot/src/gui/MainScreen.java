@@ -20,7 +20,7 @@ import thread.AlgorithmStepsThread;
  */
 public class MainScreen extends javax.swing.JApplet {
     
-    // Definitions are shown to the user when the applet starts
+    // Definitions shown to the user when the applet starts
     final static String START_TEXT = "Seja bem vindo! \n Para começar a usar este software educativo clique em 'Introdução'.";
     final static int MEMORY_SIZE = 45; //This value must be multiple by 3 because are three rows of memory cells
     final static int FREE_SPACES_IN_THE_MEMORY = 20;
