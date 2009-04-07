@@ -35,6 +35,7 @@ public class MainScreen extends javax.swing.JApplet {
     int processCounter = 0; //This variable is used to label orderly the blocks in 'jPanelAnimation' (processes in the memory)
     
     AlgorithmStepsThread st;
+    Thread t;
 
     /** Initializes the applet MainScreen */    
     @Override
@@ -515,11 +516,15 @@ public class MainScreen extends javax.swing.JApplet {
     }//GEN-LAST:event_jButtonInsertProcessActionPerformed
 
     private void jButtonAlgorithmStepsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAlgorithmStepsActionPerformed
+        if (st == null) {
+            JOptionPane.showMessageDialog(null, "Será aberta uma janela com um botão \"OK\" para prosseguir os passos do algoritmo.\n" +
+                            "DICA: caso esta janela suma (saia da frente das outras janelas abertas), use as teclas \"ALT + TAB\" para colocá-la na frente novamente.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE);
+        }
         if(st != null) {
             this.finalMainMemory = st.getFinalMainMemory();
         }
         st = new AlgorithmStepsThread(this, this.jButtonAlgorithmSteps, this.finalMainMemory, this.processesQueue, this.jPanelAnimation);
-        Thread t = new Thread(st);
+        t = new Thread(st);
         t.start();
 }//GEN-LAST:event_jButtonAlgorithmStepsActionPerformed
 
@@ -543,6 +548,11 @@ public class MainScreen extends javax.swing.JApplet {
             this.st.getJDialogNextStep().setVisible(false);
             this.st.setJDialogNextStep(null);
             this.st = null;
+        }
+        if (this.t != null) {
+            if (t.isAlive()) {
+                t.stop();
+            }    
         }
         System.gc();
     }//GEN-LAST:event_jButtonRestartActionPerformed
