@@ -23,7 +23,7 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="268" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="221" max="-2" attributes="0"/>
                       <Component id="jButtonIntroduction" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jButtonStart" min="-2" max="-2" attributes="0"/>
@@ -31,6 +31,8 @@
                       <Component id="jButtonAlgorithmSteps" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jButtonRestart" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButtonOkNextStep" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -87,6 +89,7 @@
                   <Component id="jButtonStart" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButtonAlgorithmSteps" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButtonRestart" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonOkNextStep" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -155,7 +158,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jScrollPaneAlgorithm" alignment="0" pref="424" max="32767" attributes="0"/>
+              <Component id="jScrollPaneAlgorithm" alignment="0" pref="423" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -396,7 +399,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jLabelIncreaseOrientation" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="70" max="32767" attributes="0"/>
+                  <EmptySpace pref="69" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -451,6 +454,16 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRestartActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonOkNextStep">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Clique aqui para pr&#xf3;ximo passo"/>
+        <Property name="toolTipText" type="java.lang.String" value="Clique aqui para pr&#xf3;ximo passo"/>
+        <Property name="horizontalTextPosition" type="int" value="0"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
